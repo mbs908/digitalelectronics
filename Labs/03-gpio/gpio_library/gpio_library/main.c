@@ -18,7 +18,7 @@
 #include <util/delay.h>     // Functions for busy-wait delay loops
 #include <avr/io.h>         // AVR device-specific IO definitions
 #include "gpio.h"           // GPIO library for AVR-GCC
-
+#include <avr/sfr_defs.h> 
 /* Function definitions ----------------------------------------------*/
 /**
  * Main function where the program execution begins. Toggle two LEDs 
@@ -33,7 +33,7 @@ int main(void)
 
     /* second LED */
 	 GPIO_config_output(&DDRC, LED_RED);
-	 GPIO_write_high(&PORTC,LED_RED);//LED on because active low
+	 GPIO_write_low(&PORTC,LED_RED);//LED on because active low
     // WRITE YOUR CODE HERE
 
   
@@ -43,14 +43,20 @@ int main(void)
     // Infinite loop
     while (1)
     {
-        // Pause several milliseconds
-        _delay_ms(BLINK_DELAY);
-
-        // WRITE YOUR CODE HERE
-		GPIO_toggle(&PORTB,LED_GREEN);
-		GPIO_toggle(&PORTC,LED_RED);
 		
-		//TIENE QUE PARPADEAR SOLO SI SE PULSA EL BOTÓN
+		if(GPIO_read(&PIND,2)==0)
+		
+		{
+			// Pause several milliseconds
+			_delay_ms(BLINK_DELAY);
+
+			// WRITE YOUR CODE HERE
+			GPIO_toggle(&PORTB,LED_GREEN);
+			GPIO_toggle(&PORTC,LED_RED);
+			
+		}
+        
+		
     }
 
     // Will never reach this

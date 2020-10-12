@@ -53,5 +53,17 @@ void GPIO_toggle(volatile uint8_t *reg_name, uint8_t pin_num)
 /* GPIO_read HOMEWORK */
 uint8_t GPIO_read(volatile uint8_t *reg_name, uint8_t pin_num)
 {
-	//bit_is_clear
+	  uint8_t input;
+	  
+	  if(bit_is_set(*reg_name , pin_num)) //This will return a 0 if the bit is clear, and non-zero if the bit is set.
+	  {
+		  input=1;
+	  }
+	 
+	else 
+	  {
+		  input=0;
+	  }
+	  
+	  return(input);
 }
