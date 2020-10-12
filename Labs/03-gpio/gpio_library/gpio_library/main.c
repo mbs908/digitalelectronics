@@ -7,7 +7,7 @@
 
 /* Defines -----------------------------------------------------------*/
 #define LED_GREEN   PB5
-#define LED_RED  PC0                            // AVR pin where green LED is connected
+#define LED_RED  PC0                            
 #define BLINK_DELAY 500
 #define BTN         PD2
 #ifndef F_CPU
@@ -56,9 +56,7 @@ int main(void)
 			
 		}
         
-		
     }
 
-    // Will never reach this
     return 0;
 }
