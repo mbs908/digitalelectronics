@@ -1,12 +1,16 @@
-/*
- * keypad.c
- *
- * Created: 23/11/2020 18:25:33
- *  Author: enola
- */ 
-#include <avr/sfr_defs.h>
+
+/* Includes ----------------------------------------------------------*/
 #include "gpio.h"
 #include <avr/delay.h>
+
+/* Function definitions ----------------------------------------------*/
+
+/*************************************************************************
+ * Function: code_analyzer()
+ * Purpose:  checks if the code introduced matches one of the correct ones
+ * Input:    the code introduced and the correct ones
+ * Returns:  1 if the code is correct, 0 if not
+ **************************************************************************/
 uint8_t code_analyzer(char code[4],char correct_code1[4],char correct_code2[4],char correct_code3[4])
 {
 	
@@ -30,32 +34,24 @@ uint8_t code_analyzer(char code[4],char correct_code1[4],char correct_code2[4],c
 			
 		}
 		
-		if((cnt1==4)|(cnt2==4)|(cnt3==4))
+		if((cnt1==4)|(cnt2==4)|(cnt3==4))//the code is correct if matches one of the correct codes
 		{
-			equal=1;//correct CODE
-		}	
+			equal=1;//CORRECT CODE
+		}
 		
 		return equal;
 		
 	
 }
-//void wait_clear(volatile uint8_t *reg_name){
-	for(uint8_t i=0;i<7;i++){
-		loop_until_bit_is_clear(reg_name,i);
-	}
-}
-//void detect_digit(volatile uint8_t *reg_name){
-	uint8_t zeros=1;
-	while(zeros==1){//loop until there is a change in the keypad
-		for(uint8_t i=0;i<7;i++){
-			if(GPIO_read(reg_name,i)==1){
-				zeros=0;
-			}
-		}
-	}
-}
 
-char read_digits(volatile uint8_t *reg_name){
+
+/*************************************************************************
+ * Function: read_digits()
+ * Purpose:  scan of the keypad and reading the pressed button
+ * Input:    none
+ * Returns:  the button pressed or 'X' if none button is pressed
+ **************************************************************************/
+char read_digits(void){
 	
 	GPIO_write_low(&PORTC,0);
 	GPIO_write_high(&PORTC,1);
