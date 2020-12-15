@@ -2,7 +2,9 @@
 ## Team members
 
 Enol Ayo Sando and Marina Balbín Salas
+
 [Proyect](https://choosealicense.com/licenses/mit/)
+
 Link to your GitHub project folder
 
 
