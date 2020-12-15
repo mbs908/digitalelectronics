@@ -11,7 +11,7 @@ The aim of this proyect is to develop an application which could open a door thr
 ## Hardware description
 Write you text here
 
-![Hardware scheme]
+![Hardware scheme] (Images/Imagen2.jpg)
 
 ## Code description and simulations
 ### KEYPAD.C
@@ -122,7 +122,7 @@ We want the door to be open 3 seconds. The maximum value of the timer is 16ms so
 We use TIMER 0
 
 ## Video/Animation
-Write your text here.
+![Video Link] https://youtu.be/WDP6Cb1VhOc
 
 ## References
 1-Class lectures such as the PP’lecture and notes.
