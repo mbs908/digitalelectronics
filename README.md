@@ -3,45 +3,26 @@
 
 Enol Ayo Sando and Marina Balbín Salas
 
-[Proyect](https://choosealicense.com/licenses/mit/)
-
-Link to your GitHub project folder
-
-
-```bash
-pip install foobar
-```
+[Proyect Link](https://choosealicense.com/licenses/mit/)
 
 ## Project objectives
 The aim of this proyect is to develop an application which could open a door through a 4x3 keyboard. A 4 digit-code will be inserted and will activate the relay that will open the door. The time to insert this code will be limited and there’ll be 3 different correct codes to archieve this.If the inserted code is correct a green led will be active,if is not,a red one.
-
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
 
 ## Hardware description
 Write you text here
 
 ## Code description and simulations
-```python
-import foobar
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
 ### KEYPAD.C
 In this library we have define the following functions:
 
-```python
+```
 I.	uint8_t code_analyzer(uint8_t code[4],uint8_t correct_code1[4],uint8_t correct_code2[4],uint8_t correct_code3[4])
 ```
 Used to figuring out if the inserted code is correct or not.
-I.	char read_digits(volatile uint8_t *reg_name)
+
+```
+II	char read_digits(volatile uint8_t *reg_name)
+```
 Used to relate each key to it’s decimal number .
 The process to scan a keyboard matrix 4x3 is the next:
 
@@ -50,15 +31,15 @@ The process to scan a keyboard matrix 4x3 is the next:
 Is known that one key has been pressed if any input bit is equal to zero. Knowing the output and input binary combinations we get the switch location.
 For example, we define 
 
-```python
-    GPIO_write_low(&PORTC,0);
+```
+        GPIO_write_low(&PORTC,0);
 	GPIO_write_high(&PORTC,1);
 	GPIO_write_high(&PORTC,2);
 
 ```
 It would be the 011 output, and then we decode looking the binary combinations, for example:
 
-```python
+```
 if(GPIO_read(&PINC,3)==0){
 		_delay_ms(10);
 		while(GPIO_read(&PINC,3)==0);
@@ -82,6 +63,7 @@ o	timer.c – To control the times, such as the limit time to introduce the code
 PONGO AQUI TODO EL CODIGO??
 -Timer 1 set with a 33 ms overflow (auqi me falta algo,preguntar a enol) (as used in Laboratories class)
 -Definition of the valid codes (3 in our case)
+
 -ISR(TIMER1_OVF_vect)- INTERRUPTION N1
 In this interruption ,the introduced code is readed with the function 
 
