@@ -125,8 +125,9 @@ We use TIMER 0
 Write your text here.
 
 ## References
-1-	Class lectures such as the PP’lecture and notes.
-2-	La pagina web que miro Enol
+1-Class lectures such as the PP’lecture and notes.
+
+2-La pagina web que miro Enol
 
 
 
