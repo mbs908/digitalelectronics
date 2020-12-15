@@ -11,7 +11,7 @@ The aim of this proyect is to develop an application which could open a door thr
 ## Hardware description
 Write you text here
 
-[Hardware scheme](DIGITALELECTRONICS/digitalelectronics/digitalelectronics/Images/Imagen2.png)
+![Hardware scheme](Labs/08-project/Images/Imagen2.png)
 
 ## Code description and simulations
 ### KEYPAD.C
