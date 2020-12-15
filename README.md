@@ -122,7 +122,8 @@ We want the door to be open 3 seconds. The maximum value of the timer is 16ms so
 We use TIMER 0
 
 ## Video/Animation
-![Video Link] https://youtu.be/WDP6Cb1VhOc
+Video Link to the Video
+https://youtu.be/WDP6Cb1VhOc
 
 ## References
 1-Class lectures such as the PP’lecture and notes.
